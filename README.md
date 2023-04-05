@@ -85,7 +85,8 @@ httpd.serve_forever()
 
 ## OUTPUT:
 ![image](https://user-images.githubusercontent.com/121303741/229997275-f6f4cf2e-1e6d-4b4b-a4be-37790ad01f68.png)
-![image](https://user-images.githubusercontent.com/121303741/229997306-c54d0aa2-d705-4898-a012-9b188f265418.png)
+![vijay](https://user-images.githubusercontent.com/121303741/230019033-25dcea37-2f9c-4e7d-b34e-668aa0ec4164.jpg)
+
 
 
 ## RESULT:
