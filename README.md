@@ -27,67 +27,68 @@ Serving the HTML pages.
 Testing the webserver
 
 ## PROGRAM:
-from http.server import HTTPServer,BaseHTTPRequestHandler
 
-content='''
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
-<!doctype html>
+content = """
+
+<!DOCTYPE html>
 
 <html>
 
-<head>
+    <head>
 
-<title> My Web Server</title>
+        <title>My webserver</title>
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-<h1>Top Five Web Application Development Frameworks</h1>
+        <h1><u>Languages used iun Web Development</u><h1>
 
-<h2>1.Django</h2>
+            <ul>
 
-<h2>2. MEAN Stack</h2>
+                <li>HTML</li>
 
-<h2>3. React </h2>
+                <li>CSS</li>
 
-<h2>4.MERN</h2>
+                <li>JavaScript</li>
 
-<h2>5.ANGULAR</h2>
+                <li>Bootstrap</li>
 
-</body>
+                </body>
 
-</html>
+            </html>
 
-'''
+            """
 
-class MyServer(BaseHTTPRequestHandler):
-    
-    def do_GET(self):
+            class myhandler(BaseHTTPRequestHandler):
+   
+            def do_GET(self):
+       
+            print("request received")
         
-        print("Get request received...")
+            self.send_response(200)
         
-        self.send_response(200) 
+            self.send_header('content-type', 'text/html; charset=utf-8')
         
-        self.send_header("content-type", "text/html")       
+            self.end_headers()
         
-        self.end_headers()
-        
-        self.wfile.write(content.encode())
+            self.wfile.write(content.encode())
 
-print("This is my webserver") 
+            server_address = ('',80)
 
-server_address =('',8000)
+            httpd = HTTPServer(server_address,myhandler)
 
-httpd = HTTPServer(server_address,MyServer)
+            print("my webserver is running...")
 
-httpd.serve_forever()
+            httpd.serve_forever()
+
 
 ## OUTPUT:
-![image](https://user-images.githubusercontent.com/121303741/229997275-f6f4cf2e-1e6d-4b4b-a4be-37790ad01f68.png)
-![vijay](https://user-images.githubusercontent.com/121303741/230019033-25dcea37-2f9c-4e7d-b34e-668aa0ec4164.jpg)
+![229406761-572c496d-940d-495c-8831-c68e5f5d0b4a](https://github.com/vijayarajv1704/webserver/assets/121303741/7f529cee-c595-42ad-85ce-d5b82836061f)
 
-
+![Screenshot 2023-05-09 190738](https://github.com/vijayarajv1704/webserver/assets/121303741/156dc328-4dbf-44b8-b84a-9eeb3623f570)
 
 ## RESULT:
 The program is executed succesfully
